@@ -1,0 +1,176 @@
+extends ../template
+
+block variables
+  - var title = 'Обо мне'
+
+block content
+  .wrapper
+    section.first-screen#scroll-element
+      ul.socials-list
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#vk")
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#github")
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#in")
+      .first-screen__block
+        .first-screen__photo-wrap(style="background-image: url(assets/images/intro/photo.jpg);")
+          img.first-screen__photo(src="assets/images/intro/photo.jpg", alt="")
+        .first-screen__headline Владимир Астахов
+        .first-screen__text Личный сайт веб разработчика
+      svg.menu-icon
+        use(xlink:href="assets/images/sprite.svg#hamburger")
+      svg.arrow-down
+        use(xlink:href="assets/images/sprite.svg#portf_arrow_down")
+      svg.triangle-element.triangle-element--right(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 180" preserveaspectratio="none")
+        polygon.triangle-element__polygon(points="0,180 900,180 900,0 0,180")
+      svg.triangle-element.triangle-element--left(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 180" preserveaspectratio="none")
+        polygon.triangle-element__polygon(points="0,0 0,180 900,180 0,0")
+    section.main-info
+      .main-info__about
+        .main-info__about-headline
+          p.stick  Обо мне
+        .main-info__text-container
+          .main-info__photo-wrap
+            img.main-info__photo(src="assets/images/about/photo.jpg", alt="")
+          .main-info__text-headline.stick Кто я
+          .main-info__text Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.  
+            div Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+      .main-info__skills
+        .main-info__skills-headline 
+          p.stick Чем я могу быть вам полезен
+        .main-info__skills-text  Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+        ul.skills-list
+          li.skills-list__item
+            .skills-list__headline Frontend
+            ul.circles-list
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="260" transform="rotate(-90 55 55)")
+                  .circles-list__headline HTML5
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="245" transform="rotate(-90 55 55)")
+                  .circles-list__headline CSS3
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="200" transform="rotate(-90 55 55)")
+                  .circles-list__headline JavaScript & jQuery
+          li.skills-list__item
+            .skills-list__headline Backend
+            ul.circles-list
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="75 280" transform="rotate(-90 55 55)")
+                  .circles-list__headline PHP
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="30 280" transform="rotate(-90 55 55)")
+                  .circles-list__headline mySQL
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="150" transform="rotate(-90 55 55)")
+                  .circles-list__headline Node.js & npm
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="60 280" transform="rotate(-90 55 55)")
+                  .circles-list__headline Mongo.db
+          li.skills-list__item
+            .skills-list__headline WorkFlow
+            ul.circles-list
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="210" transform="rotate(-90 55 55)")
+                  .circles-list__headline Git
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="190" transform="rotate(-90 55 55)")
+                  .circles-list__headline Gulp
+              li.circles-list__item
+                svg.circles-list__circle(viewBox="0 0 110 110" width="120" height="120")
+                  circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                  circle.circle__second(r="45" cx="50%" cy="50%" stroke-dasharray="90 280" transform="rotate(-90 55 55)")
+                  .circles-list__headline Bower
+    section.contacts
+      #map
+      .contacts-block
+        .contacts-block__headline 
+          p.stick Контакты
+        ul.contacts-list
+          li.contacts-list__item.contacts-list__item--skype 
+            svg.contacts-list__icon
+              use(xlink:href="assets/images/sprite.svg#skype")
+            p skype_kdn
+          li.contacts-list__item.contacts-list__item--mail 
+            svg.contacts-list__icon
+              use(xlink:href="assets/images/sprite.svg#envelope2")
+            p astahov@gmail.com
+          li.contacts-list__item.contacts-list__item--tel
+            svg.contacts-list__icon
+              use(xlink:href="assets/images/sprite.svg#phone")
+            p +7 931 200 93 24
+          li.contacts-list__item.contacts-list__item--address 
+            svg.contacts-list__icon
+              use(xlink:href="assets/images/sprite.svg#map_n")
+            p Новосибирск, ул. Инская, д.14
+      .footer
+        .footer__main-side
+          .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+          .footer__navigation
+            ul.navigation
+              li.navigation__item 
+                a.navigation__link(href="my-works.html") Мои работы
+              li.navigation__item 
+                a.navigation__link(href="about.html") Обо мне
+              li.navigation__item 
+                a.navigation__link(href="blog.html") Блог
+              li.navigation__item
+                a.navigation__link(href="#") Авторизация
+            ul.footer__socials-list
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#vk")
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#github")
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#in")
+          .footer__quote 
+            .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+            .footer__quote-author  — Martin Golding
+        .footer__copyright &#169; Владимир Астахов | создано с любовью в LoftSchool | 2016
+    .menu-container
+      ul.menu-container__list
+        li.menu-container__list-item
+          a.menu-container__link(href="my-works.html")
+            p.stick Мои работы
+        li.menu-container__list-item
+          a.menu-container__link(href="blog.html")
+            p.stick Блог
+        li.menu-container__list-item
+          a.menu-container__link(href="about.html")
+            p.stick Обо мне
+        li.menu-container__list-item
+          a.menu-container__link(href="#")
+            p.stick Авторизация
+      .close-button
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHdhBuuyatSqyTQgf35aYymJg6A04XTHg")

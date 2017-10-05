@@ -1,0 +1,55 @@
+.menu-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(130, 169, 114, 0.87);
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 1s;
+}
+
+.menu-container__list {
+    list-style: none;
+    color: #ffffff;
+    font-family: "Sansus Webissimo";
+    font-size: 63px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.menu-container__list-item {
+    margin-top: 60px;
+    p {
+        &:after {
+            content: none;
+        }
+    }
+    &:first-child {
+        margin: 0;
+    }
+    &:hover {
+        p {
+            &:after {
+                content: '';
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+
+.close-button {
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/about/close.png);
+    background-size: cover;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}

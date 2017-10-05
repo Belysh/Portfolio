@@ -1,0 +1,123 @@
+.header-section {
+    width: 100vw;
+    height: 50vh;
+    background-image: url(../images/about/bg.jpg);
+    background-size: cover;
+    position: relative;
+    .socials-list {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        margin: 0;
+        .socials-list__icon {
+            opacity: 1;
+        }
+    }
+    .triangle-element {
+        fill: #faf8f0;
+        height: 25%;
+    }
+}
+.blog {
+    min-height: 50vh;
+    width: 100vw;
+    padding-bottom: 200px;
+    background-color: #faf8f0;
+    display: flex;
+    position: relative;
+}
+
+.blog__menu {
+    width: 30%;
+    padding: 85px 40px 0 80px;
+    text-align: right;
+}
+
+.blog-menu-list {
+    list-style: none;
+    cursor: pointer;
+}
+
+.blog-menu-list__item {
+    color: #455a64;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 40px;
+    position: relative;
+    &:first-child {
+        margin: 0;
+    }
+    &:hover {
+        color: #4e8839;
+    }
+}
+
+.blog-menu-list__item--active {
+    color: #4e8839;
+    font-weight: 700;
+    &:after {
+        content: '';
+        width: 4px;
+        height: 45px;
+        background-color: #6c9c5a;
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        margin-top: -22.5px;
+    }
+}
+
+.blog__articles {
+    width: 70%;
+    padding: 70px;
+}
+
+.articles-list {
+    list-style: none;
+}
+
+.articles-list__item {
+    margin-top: 130px;
+    position: relative;
+    &:first-child {
+        margin: 0;
+    }
+    &:last-child:after {
+        content: none;
+    }
+    &:after {
+        content: '';
+        width: 684px;
+        height: 8px;
+        background-color: #373e42;
+        opacity: 0.07;
+        position: absolute;
+        bottom: -75px;
+    }
+}
+
+.articles-list__headline {
+    color: #455a64;
+    font-family: "Sansus Webissimo";
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.articles-list__date {
+    opacity: 0.7;
+    color: #4e8839;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 25px;
+}
+
+.articles-list__article {
+    color: #455a64;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 25px;
+}

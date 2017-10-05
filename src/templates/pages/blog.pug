@@ -1,0 +1,117 @@
+extends ../template
+
+block variables
+  - var title = 'Блог'
+
+block content
+  block content
+  .wrapper
+    section.header-section#scroll-element
+      ul.socials-list
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#vk")
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#github")
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#in")
+      .first-screen__block
+        .first-screen__photo-wrap(style="background-image: url(assets/images/intro/photo.jpg);")
+          img.first-screen__photo(src="assets/images/intro/photo.jpg", alt="")
+        .first-screen__headline Владимир Астахов
+        .first-screen__text Статьи, которые я написал
+      svg.menu-icon
+        use(xlink:href="assets/images/sprite.svg#hamburger")
+      svg.arrow-down
+        use(xlink:href="assets/images/sprite.svg#portf_arrow_down")
+      svg.triangle-element.triangle-element--right(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 180" preserveaspectratio="none")
+        polygon.triangle-element__polygon(points="0,180 900,180 900,0 0,180")
+      svg.triangle-element.triangle-element--left(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 180" preserveaspectratio="none")
+        polygon.triangle-element__polygon(points="0,0 0,180 900,180 0,0")
+    section.blog
+      .blog__menu
+        ul.blog-menu-list
+          li.blog-menu-list__item.blog-menu-list__item--active Самое важное в SASS
+          li.blog-menu-list__item Приёмы в вёрстке, без которых не обходится ни один сайт
+          li.blog-menu-list__item Самый необходимый набор Gulp плагинов
+          li.blog-menu-list__item Почему я выбрал Jade
+      .blog__articles
+        ul.articles-list
+          li.articles-list__item 
+            .articles-list__headline Самое важное в SASS
+            .articles-list__date 22 ноября 2016
+            .articles-list__article
+              p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. 
+              br
+              p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+          li.articles-list__item 
+            .articles-list__headline Приёмы в вёрстке, без которых не обходится ни один сайт
+            .articles-list__date 13 ноября 2016
+            .articles-list__article
+              p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. 
+              br
+              p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. 
+          li.articles-list__item 
+            .articles-list__headline Самый необходимый набор Gulp плагинов
+            .articles-list__date 05 декабря 2016
+            .articles-list__article
+              p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+              br
+              p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+          li.articles-list__item 
+            .articles-list__headline Почему я выбрала Pug
+            .articles-list__date 09 декабря 2016
+            .articles-list__article
+              p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. 
+              br
+              p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+      .footer
+        .footer__main-side
+          .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+          .footer__navigation
+            ul.navigation
+              li.navigation__item 
+                a.navigation__link(href="my-works.html") Мои работы
+              li.navigation__item 
+                a.navigation__link(href="about.html") Обо мне
+              li.navigation__item 
+                a.navigation__link(href="blog.html") Блог
+              li.navigation__item
+                a.navigation__link(href="#") Авторизация
+            ul.footer__socials-list
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#vk")
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#github")
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#in")
+          .footer__quote 
+            .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+            .footer__quote-author  — Martin Golding
+        .footer__copyright &#169; Владимир Астахов | создано с любовью в LoftSchool | 2016
+    .menu-container
+      ul.menu-container__list
+        li.menu-container__list-item
+          a.menu-container__link(href="my-works.html")
+            p.stick Мои работы
+        li.menu-container__list-item
+          a.menu-container__link(href="blog.html")
+            p.stick Блог
+        li.menu-container__list-item
+          a.menu-container__link(href="about.html")
+            p.stick Обо мне
+        li.menu-container__list-item
+          a.menu-container__link(href="#")
+            p.stick Авторизация
+      .close-button
