@@ -20,6 +20,9 @@ import {blog} from './common/blog';
 const map = document.getElementById('map');
 const canvas = $(".intro-background__canvas");
 const blogList = $('.blog-menu-list');
+const water = require('./water/water');
+
+water()
 
 
 
