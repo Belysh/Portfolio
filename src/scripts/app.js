@@ -19,13 +19,11 @@ import {blog} from './common/blog';
 
 const map = document.getElementById('map');
 const canvas = $(".intro-background__canvas");
-const blogList = $('.blog-menu-list');
-const water = require('./water/water');
+const blogContainer = $('.blog');
 
-water()
-
-
-
+if (canvas)  {
+    const water = require('./water/water');
+}
 
 if (map) {
     google.maps.event.addDomListener(window, 'load', map.init);
@@ -35,7 +33,6 @@ if (menu) {
     menu.init();
 }
 
-if (blogList.length) {
+if (blogContainer) {
     blog.init()
 }
-

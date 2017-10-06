@@ -10354,13 +10354,11 @@ const $ = __webpack_require__(0);
 
 const map = document.getElementById('map');
 const canvas = $(".intro-background__canvas");
-const blogList = $('.blog-menu-list');
-const water = __webpack_require__(6);
+const blogContainer = $('.blog');
 
-water()
-
-
-
+if (canvas)  {
+    const water = __webpack_require__(6);
+}
 
 if (map) {
     google.maps.event.addDomListener(window, 'load', map.init);
@@ -10370,11 +10368,9 @@ if (__WEBPACK_IMPORTED_MODULE_1__common_menu__["a" /* menu */]) {
     __WEBPACK_IMPORTED_MODULE_1__common_menu__["a" /* menu */].init();
 }
 
-if (blogList.length) {
+if (blogContainer) {
     __WEBPACK_IMPORTED_MODULE_3__common_blog__["a" /* blog */].init()
 }
-
-
 
 /***/ }),
 /* 2 */
@@ -10484,13 +10480,13 @@ const $ = __webpack_require__(0);
 let scroll = (function() {
     let scrollButton = $('.arrow-down');
     let scrollElement = $('#scroll-element')
-    /*let scrollSize = $(window).height()*0.8;*/
-    let scrollSize = parseInt(scrollElement.css('height')) - parseInt($('.triangle-element').css('height'));
 
     scrollButton.on('click', function() {
+        let scrollSize = parseInt(scrollElement.css('height')) - parseInt($('.triangle-element').css('height'));
         $('html, body').animate({scrollTop: scrollSize}, 1000);
     });
     $(window).scroll(function () {
+        let scrollSize = parseInt(scrollElement.css('height')) - parseInt($('.triangle-element').css('height'));
         if ($(this).scrollTop() <= scrollSize -20) {
             scrollButton.css({
                 'display': 'block'
@@ -10512,46 +10508,60 @@ let scroll = (function() {
 const $ = __webpack_require__(0);
 
 let blog = (function() {
-    let headline = $(".articles-list__headline");
     let item = $(".blog-menu-list__item");
-    let list = $('.blog-menu-list')
+    let list = $('.blog-menu-list');
+    let articlesList = $('.articles-list');
+    let listWidth = parseInt($('.blog__menu-width-checker').css('width'));
 
-    item.on('click', function() {
-        let object = $(this);
-        let objectIndex = object.index() + 2;
-        let headerSection = $("#scroll-element");
-        let article = $('.articles-list__item:nth-child('+ objectIndex +')');
-        
-        let activeItem = list.find('.blog-menu-list__item--active');
-        activeItem.removeClass('blog-menu-list__item--active');
+    $(window).on('resize', function () {
+        let width = parseInt($('.blog__menu-width-checker').css('width'));
+        list.css({
+            'width': width
+        });
+    });
 
-        if (article.length > 0) {
+    $(document).on('scroll', function () {
+        let scroll = window.pageYOffset;
+        for (let i = 0; i <= list.children.length + 1; i ++) {
+            let obj = i + 1;
+            let currentArticle = $('.articles-list__item:nth-child('+ obj +')').offset().top;
 
-            let scrollingSize = article.offset().top - parseInt(headerSection.css('height'));
-
-            $('html, body').animate({scrollTop: scrollingSize}, 500);
-            object.addClass('blog-menu-list__item--active');
-        } else {
-            $('html, body').animate({scrollTop: parseInt($('.wrapper').css('height'))}, 500);
-            object.addClass('blog-menu-list__item--active');
+            if (scroll >= currentArticle - 300) {
+                $('.blog-menu-list').find('.blog-menu-list__item--active').removeClass('blog-menu-list__item--active');
+                $('.blog-menu-list__item:nth-child('+ obj +')').addClass('blog-menu-list__item--active');
+            }
         }
     });
 
+    item.on('click', function(e) {
+        let index = $(e.target).index() + 1;
+        let headline = $('.articles-list__item:nth-child('+ index +') > .articles-list__headline');
+        let scrollingSize = headline.offset().top;
+
+        $('html, body').animate({scrollTop: scrollingSize}, 500);
+    });
+
     window.onscroll = function() {
-        var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+        let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+        let width = parseInt($('.blog__menu-width-checker').css('width'));
 
         if (scrolled < list.offset().top) {
             list.css({
-                'position': 'static'
+                'position': 'static',
+                'top': 'none',
+                'left': 'none',
+                'width': 'auto'
             });
         }
         if (scrolled >= list.offset().top - 85) {
             list.css({
                 'position': 'fixed',
-                'top': '85px'
+                'top': '85px',
+                'left': '80px',
+                'width': width
             });
         }
-      }
+    }
 })();
 
 /***/ }),

@@ -4,4 +4,147 @@ block variables
   - var title = 'Мои работы'
 
 block content
-  h1 Мои работы
+  .wrapper
+    section.header-section#scroll-element
+      ul.socials-list
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#vk")
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#github")
+        li.socials-list__item
+          a.socials-list__link(href="")
+            svg.socials-list__icon
+              use(xlink:href="assets/images/sprite.svg#in")
+      .first-screen__block
+        .first-screen__photo-wrap(style="background-image: url(assets/images/intro/photo.jpg);")
+          img.first-screen__photo(src="assets/images/intro/photo.jpg", alt="")
+        .first-screen__headline Владимир Астахов
+        .first-screen__text Статьи, которые я написал
+      svg.menu-icon
+        use(xlink:href="assets/images/sprite.svg#hamburger")
+      svg.arrow-down
+        use(xlink:href="assets/images/sprite.svg#portf_arrow_down")
+      svg.triangle-element.triangle-element--right(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 180" preserveaspectratio="none")
+        polygon.triangle-element__polygon(points="0,180 900,180 900,0 0,180")
+      svg.triangle-element.triangle-element--left(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 180" preserveaspectratio="none")
+        polygon.triangle-element__polygon(points="0,0 0,180 900,180 0,0")
+    section.works
+      .works__headline
+        p.stick Мои работы
+      .slider
+        .slider__description-side
+          .slider__headline
+          .slider__technologies
+          .slider__link-button
+            svg.slider__link-icon
+              use(xlink:href="assets/images/sprite.svg#link")
+            a.slider__link Посмотреть сайт 
+        .slider__main-side
+          .slider__general-part
+            ul.slider-list
+              li.slider-list__item
+                img.slider-list__img(src="")
+              li.slider-list__item
+                img.slider-list__img(src="")
+              li.slider-list__item
+                img.slider-list__img(src="")
+              li.slider-list__item
+                img.slider-list__img(src="")
+          .slider__slide-back-side
+            ul.slide-back-list
+              li.slide-back-list__item
+                img.slide-back-list__img(src="")
+              li.slide-back-list__item
+                img.slide-back-list__img(src="")
+              li.slide-back-list__item
+                img.slide-back-list__img(src="")
+              li.slide-back-list__item
+                img.slide-back-list__img(src="")
+          .slider__slide-back-side
+            ul.slide-forward-list
+              li.slide-forward-list__item
+                img.slide-forward-list__img(src="")
+              li.slide-forward-list__item
+                img.slide-forward-list__img(src="")
+              li.slide-forward-list__item
+                img.slide-forward-list__img(src="")
+              li.slide-forward-list__item
+                img.slide-forward-list__img(src="")
+    section.feed
+      .feed__headline
+        p.stick Что обо мне говорят
+      .feed__comments-container
+        ul.comments-list
+          li.comments-list__item
+            .comments-list__photo(style="background-image: url(assets/images/works/photo-1.jpg); background-position: center 125px;")
+            .comments-list__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .comments-list__author Ковальчук Дмитрий
+            .comments-list__proffesion — основатель Loftschool
+          li.comments-list__item
+            .comments-list__photo(style="background-image: url(assets/images/works/photo-2.jpg)")
+            .comments-list__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+            .comments-list__author Сабанцев Владимир 
+            .comments-list__proffesion — преподаватель
+      .feed__form-wrapper
+        form.form
+          .form__container
+            .form__headline 
+              p.stick Связаться со мной
+            .form__name-container
+              input.form__name(type="text" placeholder="Имя")
+            .form__mail-container
+              input.form__mail(type="text" placeholder="Email")
+            .form__message-container
+              textarea.form__message(placeholder="Ваше сообщение")
+            .form__buttons-container
+              input.form__submit(type="submit" value="Отправить")
+              .form__clear-button Очистить
+      .footer
+        .footer__main-side
+          .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+          .footer__navigation
+            ul.navigation
+              li.navigation__item 
+                a.navigation__link(href="my-works.html") Мои работы
+              li.navigation__item 
+                a.navigation__link(href="about.html") Обо мне
+              li.navigation__item 
+                a.navigation__link(href="blog.html") Блог
+              li.navigation__item
+                a.navigation__link(href="#") Авторизация
+            ul.footer__socials-list
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#vk")
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#github")
+              li.footer__socials-list-item
+                a.footer__socials-list-link(href="")
+                  svg.footer__socials-list-icon
+                    use(xlink:href="assets/images/sprite.svg#in")
+          .footer__quote 
+            .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+            .footer__quote-author  — Martin Golding
+        .footer__copyright &#169; Владимир Астахов | создано с любовью в LoftSchool | 2016
+    .menu-container
+      ul.menu-container__list
+        li.menu-container__list-item
+          a.menu-container__link(href="my-works.html")
+            p.stick Мои работы
+        li.menu-container__list-item
+          a.menu-container__link(href="blog.html")
+            p.stick Блог
+        li.menu-container__list-item
+          a.menu-container__link(href="about.html")
+            p.stick Обо мне
+        li.menu-container__list-item
+          a.menu-container__link(href="#")
+            p.stick Авторизация
+      .close-button
