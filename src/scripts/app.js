@@ -15,11 +15,13 @@ const $ = require('jquery');
 import {map} from './common/map';
 import {menu} from './common/menu';
 import {scroll} from './common/scroll';
+import {slider} from './common/slider';
 import {blog} from './common/blog';
 
 const map = document.getElementById('map');
 const canvas = $(".intro-background__canvas");
 const blogContainer = $('.blog');
+const sliderContainer = $('.slider');
 
 if (canvas)  {
     const water = require('./water/water');
@@ -35,4 +37,8 @@ if (menu) {
 
 if (blogContainer) {
     blog.init()
+}
+
+if (sliderContainer) {
+    slider.init();
 }

@@ -37,43 +37,67 @@ block content
         p.stick Мои работы
       .slider
         .slider__description-side
-          .slider__headline
-          .slider__technologies
-          .slider__link-button
-            svg.slider__link-icon
-              use(xlink:href="assets/images/sprite.svg#link")
-            a.slider__link Посмотреть сайт 
+          ul.description-list
+            li.description-list__item.active-slide
+                .slider__headline Школа онлай-образования "LoftSchool"
+                .slider__technologies HTML5, CSS3, javascript, php
+                .slider__link-button
+                  svg.slider__link-icon
+                    use(xlink:href="assets/images/sprite.svg#link")
+                  a.slider__link Посмотреть сайт
+            li.description-list__item
+              .slider__headline Агентсво интернет решений "ITLoft"
+              .slider__technologies node
+              .slider__link-button
+                svg.slider__link-icon
+                  use(xlink:href="assets/images/sprite.svg#link")
+                a.slider__link(href="#") Посмотреть сайт
+            li.description-list__item
+              .slider__headline Портал обучающих уроков "LoftBlog"
+              .slider__technologies Ruby on Rails, javascript, RESTful
+              .slider__link-button
+                svg.slider__link-icon
+                  use(xlink:href="assets/images/sprite.svg#link")
+                a.slider__link Посмотреть сайт
+            li.description-list__item
+              .slider__headline Сайт "Атма йога"
+              .slider__technologies UX, design, seo
+              .slider__link-button
+                svg.slider__link-icon
+                  use(xlink:href="assets/images/sprite.svg#link")
+                a.slider__link Посмотреть сайт
         .slider__main-side
           .slider__general-part
             ul.slider-list
+              li.slider-list__item.active-slide
+                img.slider-list__img(src="assets/images/works/work-1.png")
               li.slider-list__item
-                img.slider-list__img(src="")
+                img.slider-list__img(src="assets/images/works/work-2.png")
               li.slider-list__item
-                img.slider-list__img(src="")
+                img.slider-list__img(src="assets/images/works/work-3.png")
               li.slider-list__item
-                img.slider-list__img(src="")
-              li.slider-list__item
-                img.slider-list__img(src="")
-          .slider__slide-back-side
-            ul.slide-back-list
-              li.slide-back-list__item
-                img.slide-back-list__img(src="")
-              li.slide-back-list__item
-                img.slide-back-list__img(src="")
-              li.slide-back-list__item
-                img.slide-back-list__img(src="")
-              li.slide-back-list__item
-                img.slide-back-list__img(src="")
-          .slider__slide-back-side
-            ul.slide-forward-list
-              li.slide-forward-list__item
-                img.slide-forward-list__img(src="")
-              li.slide-forward-list__item
-                img.slide-forward-list__img(src="")
-              li.slide-forward-list__item
-                img.slide-forward-list__img(src="")
-              li.slide-forward-list__item
-                img.slide-forward-list__img(src="")
+                img.slider-list__img(src="assets/images/works/work-4.png")
+          .slider__controlers-container
+            .slider__slide-back-side
+              ul.slide-back-list
+                li.slide-back-list__item
+                  img.slide-back-list__img(src="assets/images/works/work-1.png")
+                li.slide-back-list__item
+                  img.slide-back-list__img(src="assets/images/works/work-2.png")
+                li.slide-back-list__item
+                  img.slide-back-list__img(src="assets/images/works/work-3.png")
+                li.slide-back-list__item.back-slide-active
+                  img.slide-back-list__img(src="assets/images/works/work-4.png")
+            .slider__slide-forward-side
+              ul.slide-forward-list
+                li.slide-forward-list__item
+                  img.slide-forward-list__img(src="assets/images/works/work-1.png")
+                li.slide-forward-list__item.forward-slide-active
+                  img.slide-forward-list__img(src="assets/images/works/work-2.png")
+                li.slide-forward-list__item
+                  img.slide-forward-list__img(src="assets/images/works/work-3.png")
+                li.slide-forward-list__item
+                  img.slide-forward-list__img(src="assets/images/works/work-4.png")
     section.feed
       .feed__headline
         p.stick Что обо мне говорят
