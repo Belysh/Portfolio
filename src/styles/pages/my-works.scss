@@ -6,7 +6,7 @@
 }
 
 .works__headline {
-    height: 15vh;
+    height: 20vh;
     background-color: #faf8f0;
     color: #373e42;
     font-family: "Sansus Webissimo";
@@ -21,7 +21,7 @@
 }
 
 .slider {
-    height: 75vh;
+    height: 70vh;
     display: flex;
     img {
         -webkit-touch-callout: none; /* iOS Safari */
@@ -31,8 +31,7 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none;
         pointer-events: none;
-        }
-        
+        }        
 }
 
 .slider__description-side {
@@ -66,6 +65,7 @@
     font-size: 35px;
     font-weight: 400;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .slider__technologies {

@@ -20,7 +20,7 @@ let slider = (function () {
         'top': '0'
     })
 
-    scrollUp.on('click', function () {
+    let scrollingUp = function () {
         let nextSlideUp = upSlider.find('.forward-slide-active:last').next();
         let nextSlideDown = downSlider.find('.back-slide-active:last').next();
         let nextSlide = slider.find('.active-slide').next();
@@ -111,9 +111,9 @@ let slider = (function () {
 
 
         }
-    });
+    };
 
-    scrollDown.on('click', function () {
+    let scrollingDown = function () {
         let prevSlideDown = downSlider.find('.back-slide-active').first().prev();
         let prevSlideUp = upSlider.find('.forward-slide-active').first().prev();
         let prevSlide = slider.find('.active-slide').prev();
@@ -207,7 +207,20 @@ let slider = (function () {
                 });
             }
         }
-    });
+    };
+
+    let addListener = function () {
+        $('.slider__slide-back-side').on('click', scrollingDown);
+        $('.slider__slide-forward-side').on('click', scrollingUp)
+    }
+
+    let sliderInit = function () {
+        if (slider.length > 0) {
+            addListener();
+        }
+    }
+
+    module.exports = sliderInit;
 })();
 
 

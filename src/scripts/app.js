@@ -1,44 +1,17 @@
-
-/*const water = require('./water/water');
-water()
-
-/*const water = require('./water/water');
-    water();*/
-/*const slider = require('./common/slider');
-const $ = require('jquery'); // если будет нужен
-
-
-
-slider(); // инициализируем слайдер*/
-const $ = require('jquery');
-
-import {map} from './common/map';
-import {menu} from './common/menu';
 import {scroll} from './common/scroll';
-import {slider} from './common/slider';
-import {blog} from './common/blog';
 
-const map = document.getElementById('map');
-const canvas = $(".intro-background__canvas");
-const blogContainer = $('.blog');
-const sliderContainer = $('.slider');
+const blog = require('./common/blog');
+const slider = require('./common/slider');
+const menu = require('./common/menu');
+const map = require('./common/map');
+const preloader = require('./common/preloader')
+/*const water = require('./water/water');*/
 
-if (canvas)  {
-    const water = require('./water/water');
-}
 
-if (map) {
-    google.maps.event.addDomListener(window, 'load', map.init);
-}
+menu();
 
-if (menu) {
-    menu.init();
-}
+slider();
 
-if (blogContainer) {
-    blog.init()
-}
+blog();
 
-if (sliderContainer) {
-    slider.init();
-}
+map();

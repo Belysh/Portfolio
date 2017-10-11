@@ -25,17 +25,66 @@
     background-color: #faf8f0;
     display: flex;
     position: relative;
+    @include laptop {
+        padding-bottom: 350px;
+    }
 }
 
 .blog__menu {
     width: 30%;
     padding: 85px 40px 0 80px;
     text-align: right;
+    @include tablets {
+        right: 100%;
+        position: fixed;
+        background-color: #6c9c5a;
+        width: 80%;
+        height: 100%;
+        z-index: 20;
+        top: 0;
+        .blog__menu-circle {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background-color: #6c9c5a;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 100%;
+            transform: translate(-70%, -50%);
+            -webkit-box-shadow: 4px 0px 4px 0px rgba(156,156,156,1);
+            -moz-box-shadow: 4px 0px 4px 0px rgba(156,156,156,1);
+            box-shadow: 4px 0px 4px 0px rgba(156,156,156,1);
+            z-index: 0;
+        }
+        &:before {
+            content: '';
+            width: 40px;
+            height: 70px;
+            position: absolute;
+            background-color: #6c9c5a;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            z-index: 20;
+        }
+        &.open-menu {
+            -webkit-box-shadow: 4px 0px 4px 0px rgba(156,156,156,1);
+            -moz-box-shadow: 4px 0px 4px 0px rgba(156,156,156,1);
+            box-shadow: 4px 0px 4px 0px rgba(156,156,156,1);
+        }
+    }
 }
 
 .blog-menu-list {
     list-style: none;
     cursor: pointer;
+    @include tablets {
+        left: auto;
+        position: absolute;
+        width: 80%;
+        right: 10%;
+    }
 }
 
 .blog-menu-list__item {
@@ -49,7 +98,12 @@
         margin: 0;
     }
     &:hover {
-        color: #4e8839;
+        font-weight: bold;
+        opacity: 1;
+    }
+    @include tablets {
+        color: #ffffff;
+        opacity: 0.8;
     }
 }
 
@@ -66,11 +120,22 @@
         top: 50%;
         margin-top: -22.5px;
     }
+    @include tablets {
+        color: #ffffff;
+        opacity: 1;
+        &:after {
+            content: none;
+        }
+    }
 }
 
 .blog__articles {
     width: 70%;
     padding: 70px;
+    @include tablets {
+        width: 100%;
+        padding: 70px 25px;
+    }
 }
 
 .articles-list {

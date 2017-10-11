@@ -85,10 +85,13 @@
     height: 16px;
     position: absolute;
     cursor: pointer;
-    bottom: 80px;
+    bottom: 10%;
     left: 50%;
     margin-left: -13px;
     z-index: 10;
+    @include tablets {
+        display: none !important;
+    }
 }
 
 .menu-icon {
@@ -105,6 +108,9 @@
     min-height: 80vh;
     width: 100vw;
     display: flex;
+    @include laptop {
+        flex-direction: column;
+    }    
 }
 
 .skills-list {
@@ -118,8 +124,16 @@
     }
 }
 
+.circles-list {
+    display: flex;
+    @include desktop {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    } 
+}
+
 .circles-list__item {
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 .skills-list__headline {
@@ -127,11 +141,21 @@
     font-family: Roboto;
     font-size: 28px;
     font-weight: 500;
+    @include laptop {
+        text-align: center;
+    }
+}
+
+.circles-list {
+    list-style: none;
+    @include laptop {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .circles-list__item {
     position: relative;
-    display: inline-block;
 }
 
 .circles-list__circle {
@@ -171,6 +195,13 @@
     font-size: 18px;
     align-items: center;
     padding-right: 20px;
+    @include laptop {
+        width: 100%;
+        padding: 30px 0;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
 }
 
 .main-info__photo-wrap {
@@ -179,6 +210,13 @@
     overflow: hidden;
     background-image: url(../images/about/photo.jpg);
     background-position: 600px 0px;
+    @include laptop {
+        margin: 20px 0 0 0;
+        margin: 0 auto;
+    }
+    @include tablets {
+        width: 80%;
+    }
 }
 
 .main-info__photo {
@@ -188,6 +226,9 @@
 .main-info__text-container {
     width: 50%;
     text-align: center;
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .main-info__about-headline {
@@ -223,6 +264,9 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 30px;
+    @include laptop {
+        width: 100%;
+    }
 }
 
 .main-info__skills-headline {
@@ -253,6 +297,9 @@
     width: 100vw;
     display: flex;
     position: relative;
+    @include phones {
+        height: 150vh;
+    }
 }
 
 .footer {
@@ -281,10 +328,18 @@
     display: flex;
     justify-content: space-between;
     width: 150px;
+    @include laptop {
+        margin: 0 auto;
+        width: 70%;
+        justify-content: space-around;
+    }
 }
 
 .footer__main-side {
     display: flex;
+    @include laptop {
+        flex-direction: column;
+    }
 }
 
 .footer__text {
@@ -294,11 +349,19 @@
     font-size: 16px;
     padding: 30px;
     font-weight: 300;
+    @include laptop {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .footer__navigation {
     padding: 30px;
-    width: 33%;    
+    width: 33%;   
+    @include laptop {
+        width: 100%;
+        text-align: center;
+    } 
 }
 
 .navigation {
@@ -308,15 +371,26 @@
     font-size: 16px;
     font-weight: 700;
     list-style: none;
+    @include laptop {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 .navigation__item {
     margin-right: 20px;
+    &:last-child {
+        margin: 0;
+    }
 }
 
 .footer__quote {
     padding: 30px;
     width: 33%;
+    @include laptop {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .footer__quote-text {
@@ -356,6 +430,12 @@
     left: 50%;
     transform: translate(-50%, calc(-50% - 90px));
     padding: 30px 50px;
+    @include phones {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        width: 100%;
+    }
 }
 
 .contacts-block__headline {
