@@ -35,28 +35,73 @@
         </div>
         <div class="authorization-button">Авторизоваться</div>
         <div class="intro-block">
-          <div class="intro-block__photo-wrap" style="background-image: url(assets/images/intro/photo.jpg);"><img class="intro-block__photo" src="assets/images/intro/photo.jpg" alt=""></div>
-          <div class="intro-block__headline">Владимир Астахов</div>
-          <div class="intro-block__text">Личный сайт веб разработчика</div>
-          <ul class="socials-list">
-            <li class="socials-list__item"><a class="socials-list__link" href="">
-                <svg class="socials-list__icon">
-                  <use xlink:href="assets/images/sprite.svg#vk"></use>
-                </svg></a></li>
-            <li class="socials-list__item"><a class="socials-list__link" href="">
-                <svg class="socials-list__icon">
-                  <use xlink:href="assets/images/sprite.svg#github"></use>
-                </svg></a></li>
-            <li class="socials-list__item"><a class="socials-list__link" href="">
-                <svg class="socials-list__icon">
-                  <use xlink:href="assets/images/sprite.svg#in"></use>
-                </svg></a></li>
-          </ul>
-          <ul class="intro-block__menu">
-            <li class="intro-block__menu-item"> <a class="intro-block__menu-link" href="my-works.html">Мои работы</a></li>
-            <li class="intro-block__menu-item"> <a class="intro-block__menu-link" href="about.html">Обо мне</a></li>
-            <li class="intro-block__menu-item"> <a class="intro-block__menu-link" href="blog.html">Блог</a></li>
-          </ul>
+          <div class="intro-block__front">
+            <div class="intro-block__photo-wrap" style="background-image: url(assets/images/intro/photo.jpg);"><img class="intro-block__photo" src="assets/images/intro/photo.jpg" alt=""></div>
+            <div class="intro-block__headline">Владимир Астахов</div>
+            <div class="intro-block__text">Личный сайт веб разработчика</div>
+            <ul class="socials-list">
+              <li class="socials-list__item"><a class="socials-list__link" href="">
+                  <svg class="socials-list__icon">
+                    <use xlink:href="assets/images/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials-list__item"><a class="socials-list__link" href="">
+                  <svg class="socials-list__icon">
+                    <use xlink:href="assets/images/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials-list__item"><a class="socials-list__link" href="">
+                  <svg class="socials-list__icon">
+                    <use xlink:href="assets/images/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+            <ul class="intro-block__menu">
+              <li class="intro-block__menu-item"> <a class="intro-block__menu-link" href="my-works.html">Мои работы</a></li>
+              <li class="intro-block__menu-item"> <a class="intro-block__menu-link" href="about.html">Обо мне</a></li>
+              <li class="intro-block__menu-item"> <a class="intro-block__menu-link" href="blog.html">Блог</a></li>
+            </ul>
+          </div>
+          <div class="intro-block__back">
+            <div class="intro-block__back-headline"> 
+              <p class="stick">Авторизуйтесь</p>
+            </div>
+            <form class="auth-form">
+              <div class="auth-form__container">
+                <div class="auth-form__login-wrap">
+                  <input class="auth-form__login" type="text" placeholder="Логин">
+                </div>
+                <div class="auth-form__password-wrap">
+                  <input class="auth-form__password" type="password" placeholder="Пароль">
+                </div>
+                <div class="auth-form__checkbox-wrap">
+                  <label>
+                    <input class="auth-form__checkbox" type="checkbox">
+                    <div class="auth-form__checkbox-fake">
+                      <svg class="form__checkbox-icon">
+                        <use xlink:href="assets/images/sprite.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="auth-form__chechbox-text">Я человек</div>
+                  </label>
+                </div>
+                <div class="auth-form__question">Вы точно не робот?</div>
+                <div class="auth-form__radio-wrap">
+                  <label>
+                    <input class="auth-form__radio" type="radio" name="back-radio">
+                    <div class="auth-form__radio-fake"></div>
+                    <div class="auth-form__radio-text">Да</div>
+                  </label>
+                  <label>
+                    <input class="auth-form__radio" type="radio" name="back-radio">
+                    <div class="auth-form__radio-fake"></div>
+                    <div class="auth-form__radio-text">Не уверен</div>
+                  </label>
+                </div>
+              </div>
+            </form>
+            <ul class="intro-block__menu">
+              <li class="intro-block__menu-item" id="front-flip-button"><a class="intro-block__menu-link">На главную</a></li>
+              <li class="intro-block__menu-item"> <a class="intro-block__menu-link">Войти                                  </a></li>
+            </ul>
+          </div>
         </div>
         <div class="copyright">	&#169; Владимир Астахов | создано с любовью в LoftSchool | 2016</div>
       </div>

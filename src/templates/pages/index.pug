@@ -20,29 +20,61 @@ block content
         canvas.intro-background__canvas
       .authorization-button Авторизоваться
       .intro-block
-        .intro-block__photo-wrap(style="background-image: url(assets/images/intro/photo.jpg);")
-          img.intro-block__photo(src="assets/images/intro/photo.jpg", alt="")
-        .intro-block__headline Владимир Астахов
-        .intro-block__text Личный сайт веб разработчика
-        ul.socials-list
-          li.socials-list__item
-            a.socials-list__link(href="")
-              svg.socials-list__icon
-                use(xlink:href="assets/images/sprite.svg#vk")
-          li.socials-list__item
-            a.socials-list__link(href="")
-              svg.socials-list__icon
-                use(xlink:href="assets/images/sprite.svg#github")
-          li.socials-list__item
-            a.socials-list__link(href="")
-              svg.socials-list__icon
-                use(xlink:href="assets/images/sprite.svg#in")
-        ul.intro-block__menu
-          li.intro-block__menu-item 
-            a.intro-block__menu-link(href="my-works.html") Мои работы
-          li.intro-block__menu-item 
-            a.intro-block__menu-link(href="about.html") Обо мне
-          li.intro-block__menu-item 
-            a.intro-block__menu-link(href="blog.html") Блог
+        .intro-block__front
+          .intro-block__photo-wrap(style="background-image: url(assets/images/intro/photo.jpg);")
+            img.intro-block__photo(src="assets/images/intro/photo.jpg", alt="")
+          .intro-block__headline Владимир Астахов
+          .intro-block__text Личный сайт веб разработчика
+          ul.socials-list
+            li.socials-list__item
+              a.socials-list__link(href="")
+                svg.socials-list__icon
+                  use(xlink:href="assets/images/sprite.svg#vk")
+            li.socials-list__item
+              a.socials-list__link(href="")
+                svg.socials-list__icon
+                  use(xlink:href="assets/images/sprite.svg#github")
+            li.socials-list__item
+              a.socials-list__link(href="")
+                svg.socials-list__icon
+                  use(xlink:href="assets/images/sprite.svg#in")
+          ul.intro-block__menu
+            li.intro-block__menu-item 
+              a.intro-block__menu-link(href="my-works.html") Мои работы
+            li.intro-block__menu-item 
+              a.intro-block__menu-link(href="about.html") Обо мне
+            li.intro-block__menu-item 
+              a.intro-block__menu-link(href="blog.html") Блог
+        .intro-block__back
+          .intro-block__back-headline 
+            p.stick Авторизуйтесь
+          form.auth-form
+            .auth-form__container
+              .auth-form__login-wrap
+                input.auth-form__login(type="text" placeholder="Логин")
+              .auth-form__password-wrap
+                input.auth-form__password(type="password" placeholder="Пароль")
+              .auth-form__checkbox-wrap
+                label
+                  input.auth-form__checkbox(type="checkbox")
+                  .auth-form__checkbox-fake
+                    svg.form__checkbox-icon
+                      use(xlink:href="assets/images/sprite.svg#check")
+                  .auth-form__chechbox-text Я человек
+              .auth-form__question Вы точно не робот?
+              .auth-form__radio-wrap
+                label
+                  input.auth-form__radio(type="radio" name="back-radio")
+                  .auth-form__radio-fake
+                  .auth-form__radio-text Да
+                label
+                  input.auth-form__radio(type="radio" name="back-radio")
+                  .auth-form__radio-fake
+                  .auth-form__radio-text Не уверен
+          ul.intro-block__menu
+            li.intro-block__menu-item#front-flip-button
+              a.intro-block__menu-link На главную
+            li.intro-block__menu-item 
+              a.intro-block__menu-link Войти                                  
       .copyright 	&#169; Владимир Астахов | создано с любовью в LoftSchool | 2016
           

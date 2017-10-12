@@ -26,6 +26,10 @@ const paths = {
     src: 'src/styles/**/*.scss',
     dest: 'build/assets/styles/'
   },
+  php: {
+    src: 'src/php/**/*.php',
+    dest: 'build/assets/php/'
+  },
   scripts: {
     src: 'src/scripts/**/*.js',
     dest: 'build/assets/scripts/'
@@ -84,6 +88,10 @@ function images() {
   return gulp.src(paths.images.src).pipe(gulp.dest(paths.images.dest));
 }
 
+function php() {
+  return gulp.src(paths.php.src).pipe(gulp.dest(paths.php.dest));
+}
+
 //svg спрайт
 
 function toSvg() {
@@ -128,6 +136,7 @@ function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.templates.src, templates);
   gulp.watch(paths.images.src, images);
+  gulp.watch(paths.php.src, php);
 }
 
 // следим за build и релоадим браузер
@@ -147,6 +156,7 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.templates = templates;
 exports.images = images;
+exports.php = php;
 exports.watch = watch;
 exports.server = server;
 exports.toSvg = toSvg;
@@ -156,7 +166,7 @@ gulp.task(
   'default',
   gulp.series(
     clean,
-    gulp.parallel(styles, scripts, templates, images),
+    gulp.parallel(styles, scripts, templates, images, php),
     gulp.parallel(watch, server)
   )
 );

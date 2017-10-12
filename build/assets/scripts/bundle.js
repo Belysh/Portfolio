@@ -10336,9 +10336,12 @@ const blog = __webpack_require__(3);
 const slider = __webpack_require__(4);
 const menu = __webpack_require__(5);
 const map = __webpack_require__(6);
-const preloader = __webpack_require__(7)
+const flip = __webpack_require__(7);
+const mail = __webpack_require__(8);
+const preloader = __webpack_require__(9);
 /*const water = require('./water/water');*/
 
+flip();
 
 menu();
 
@@ -10729,90 +10732,6 @@ let slider = (function () {
 
 
 
-/*
-scrollUp.on('click', function () {
-    let nextSlideUp = upSlider.find('.forward-slide-active:last').next();
-    let nextSlideDown = downSlider.find('.back-slide-active:last').next();
-    let nextSlide = slider.find('.active-slide:last').next();
-    let nextDescriptionSlide = descSlider.find('.active-slide:last').next();
-
-    if (flag === true) {
-        flag = false;
-
-        if (nextSlideUp.length === 1) {
-            if (nextSlideUp.index() > 1) {
-                upSlider.children().first().removeClass('forward-slide-active')
-            }
-            upSlider.children().first().css({
-                'z-index': 5
-            });
-            $('.slide-forward-list__item:last').removeClass('forward-slide-active');
-
-            nextSlideUp.addClass('forward-slide-active');
-
-            $('.slide-forward-list__item:last').removeAttr('style');
-        } else {
-            upSlider.children().removeClass('forward-slide-active');
-
-            $('.slide-forward-list__item:last').css({
-                'top': '0'
-            });
-
-            upSlider.children().first().addClass('forward-slide-active').css({
-                'z-index': 6
-            });
-        }
-
-        if (nextSlideDown.length === 1) {
-            if (nextSlideDown.index() > 1) {
-                downSlider.children().first().removeClass('back-slide-active')
-            }
-            downSlider.children().first().css({
-                'z-index': 5
-            });
-            $('.slide-back-list__item:last').removeClass('back-slide-active');
-
-            nextSlideDown.addClass('back-slide-active');
-
-            $('.slide-back-list__item:last').removeAttr('style');
-        } else {
-            downSlider.children().removeClass('back-slide-active');
-
-            $('.slide-back-list__item:last').css({
-                'bottom': '0'
-            });
-
-            downSlider.children().first().addClass('back-slide-active').css({
-                'z-index': 6
-            });
-        }
-
-        if (nextSlide.length === 1) {
-            nextSlide.addClass('active-slide');
-            slider.find('.active-slide').first().removeClass('active-slide');
-        } else {
-            slider.find('.active-slide').first().removeClass('active-slide');
-            slider.children().first().addClass('active-slide');
-        }
-
-        if (nextDescriptionSlide.length === 1) {
-            nextDescriptionSlide.addClass('active-slide');
-            descSlider.find('.active-slide').first().removeClass('active-slide');
-        } else {
-            descSlider.find('.active-slide').first().removeClass('active-slide');
-            descSlider.children().first().addClass('active-slide');
-        }
-
-        setTimeout(function () {
-            flag = true;
-        }, 1000);
-    }
-});*/
-
-
-
-
-
 /***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11121,6 +11040,127 @@ module.exports = mapInit;
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const $ = __webpack_require__(0);
+
+let flip = (function () {
+    let flipElement = $('.intro-block');
+    let backFlipButton = $('.authorization-button');
+    let frontFlipButton = $('#front-flip-button');
+    let flag = true;
+
+    let flipItBack = function () {
+        if (flag === true) {
+            flag = false;
+            console.log(flag);
+
+            backFlipButton.css({
+                'display': 'none'
+            });
+            flipElement.addClass('face-down');
+            setTimeout(function () {
+                $('.intro-block__front').css({
+                    'display': 'none'
+                });
+                $('.intro-block__back').css({
+                    'display': 'block'
+                });
+            }, 600)
+
+            setTimeout(function () {
+                flag = true;
+            }, 2300);
+        }
+    }
+
+    let missClick = function (e) {
+        if (flag === true) {
+            flag = false;
+
+            if (!flipElement.is(e.target) && !backFlipButton.is(e.target) && flipElement.has(e.target).length === 0) {
+                backFlipButton.css({
+                    'display': 'block'
+                });
+                flipElement.removeClass('face-down');
+                setTimeout(function () {
+                    $('.intro-block__front').css({
+                        'display': 'flex'
+                    });
+                    $('.intro-block__back').css({
+                        'display': 'none'
+                    });
+                }, 600)
+            }
+
+            setTimeout(function () {
+                flag = true;
+            }, 2300);
+        }  
+    }
+
+    let flipItFront = function () {
+        if (flag === true) {
+            flag = false;
+
+            backFlipButton.css({
+                'display': 'block'
+            });
+            flipElement.removeClass('face-down');
+            setTimeout(function () {
+                $('.intro-block__front').css({
+                    'display': 'flex'
+                });
+                $('.intro-block__back').css({
+                    'display': 'none'
+                });
+            }, 600)
+
+            setTimeout(function () {
+                flag = true;
+            }, 2300);
+        }        
+    }
+
+    let addListener = function () {
+        $('.authorization-button').on('click', flipItBack);
+        $(document).on('click', missClick);
+        $('#front-flip-button').on('click', flipItFront)
+    }
+    
+    let flipInit = function () {
+        addListener();
+    }
+    
+    module.exports = flipInit;
+})();
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const $ = __webpack_require__(0);
+
+$(document).ready(function() {
+    $(".form").submit(function() {
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "./assets/php/mail.php",
+            data: th.serialize()
+        }).done(function() {
+            alert("Спасибо за письмо");
+            setTimeout(function() {
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
+});
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const $ = __webpack_require__(0);
