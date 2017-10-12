@@ -17,6 +17,10 @@
         fill: #faf8f0;
         height: 10vh;
     }
+
+    @include tablets {
+        height: 100vh;
+    }
 }
 .blog {
     min-height: 50vh;
@@ -66,7 +70,7 @@
             top: 50%;
             right: 0;
             transform: translate(0, -50%);
-            z-index: 20;
+            z-index: 16;
         }
         &.open-menu {
             -webkit-box-shadow: 4px 0px 4px 0px rgba(156,156,156,1);
@@ -79,6 +83,7 @@
 .blog-menu-list {
     list-style: none;
     cursor: pointer;
+    z-index: 20;
     @include tablets {
         left: auto;
         position: absolute;

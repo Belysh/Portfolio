@@ -21,6 +21,9 @@
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
+    @include tablets {
+        font-size: 40px;
+    }
 }
 
 .menu-container__list-item {

@@ -18,6 +18,11 @@
             opacity: 1;
         }
     }
+    .triangle-element--right {
+        @include laptop {
+            fill: #ebefe2;
+        }
+    }
 }
 
 .first-screen__block {
@@ -89,9 +94,6 @@
     left: 50%;
     margin-left: -13px;
     z-index: 10;
-    @include tablets {
-        display: none !important;
-    }
 }
 
 .menu-icon {
@@ -309,6 +311,7 @@
     width: 100%;
     background-color: rgba(55, 62,66, 0.85);
     flex-direction: column;
+    max-height: 380px;
 }
 
 .footer__socials-list-icon {
@@ -353,6 +356,9 @@
         width: 100%;
         text-align: center;
     }
+    @include phones {
+        padding: 5px;
+    }
 }
 
 .footer__navigation {
@@ -361,7 +367,10 @@
     @include laptop {
         width: 100%;
         text-align: center;
-    } 
+    }
+    @include phones {
+        padding: 5px;
+    }
 }
 
 .navigation {
@@ -387,9 +396,13 @@
 .footer__quote {
     padding: 30px;
     width: 33%;
+    overflow: hidden;
     @include laptop {
         width: 100%;
         text-align: center;
+    }
+    @include phones {
+        padding: 5px;
     }
 }
 

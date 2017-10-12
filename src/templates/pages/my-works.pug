@@ -99,7 +99,7 @@ block content
                 li.slide-back-list__item.back-slide-active
                   img.slide-back-list__img(src="assets/images/works/work-4.png")
             .slider__slide-forward-side
-              ul.slide-forward-list
+             ul.slide-forward-list
                 li.slide-forward-list__item
                   img.slide-forward-list__img(src="assets/images/works/work-1.png")
                 li.slide-forward-list__item.forward-slide-active
@@ -129,11 +129,11 @@ block content
             .form__headline 
               p.stick Связаться со мной
             .form__name-container
-              input.form__name(type="text" placeholder="Имя")
+              input.form__name(type="text" placeholder="Имя" required)
             .form__mail-container
-              input.form__mail(type="text" placeholder="Email")
+              input.form__mail(type="text" placeholder="Email" required)
             .form__message-container
-              textarea.form__message(placeholder="Ваше сообщение")
+              textarea.form__message(placeholder="Ваше сообщение" required)
             .form__buttons-container
               input.form__submit(type="submit" value="Отправить")
               .form__clear-button Очистить

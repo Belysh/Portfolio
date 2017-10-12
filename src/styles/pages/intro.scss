@@ -43,6 +43,10 @@
         border: 2px solid #729e19;
         background-color: #4e8839;
     }
+    @include tablets {
+        right: 50%;
+        transform: translate(50%);
+    }
 }
 
 .intro-block {
@@ -58,6 +62,9 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     z-index: 10;
+    @include phones {
+        width: 260px;
+    }
 }
 
 .intro-block__photo-wrap {
@@ -138,6 +145,7 @@
     font-family: Roboto;
     position: absolute;
     bottom: 40px;
+    text-align: center;
 }
 
 
