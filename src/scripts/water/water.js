@@ -1,4 +1,9 @@
-/******/ (function(modules) { // webpackBootstrap
+/******/ 
+const $ = require('jquery');
+
+let startAnimation = function () {
+
+(function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -26084,4 +26089,12 @@
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=water.js.map
+}
+
+let animationInit = function () {
+	if ($('.intro-background').length > 0) {
+		startAnimation()
+	}
+}
+
+module.exports = animationInit;

@@ -7,7 +7,9 @@ const map = require('./common/map');
 const flip = require('./common/flip');
 const mail = require('./common/mail');
 const preloader = require('./common/preloader');
-/*const water = require('./water/water');*/
+const water = require('./water/water');
+
+water();
 
 flip();
 
