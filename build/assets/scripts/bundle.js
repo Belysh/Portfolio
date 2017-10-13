@@ -11141,20 +11141,23 @@ let flip = (function () {
 
 const $ = __webpack_require__(0);
 
-$(document).ready(function() {
-    $(".form").submit(function() {
-        var th = $(this);
+$(function(){
+    $(".form").on("submit", function(e) {
+        e.preventDefault();
+
+        var form = $(this),
+            formData = form.serialize();
         $.ajax({
+            url: "assets/php/send.php",
             type: "POST",
-            url: "./assets/php/mail.php",
-            data: th.serialize()
-        }).done(function() {
-            alert("Спасибо за письмо");
-            setTimeout(function() {
-                th.trigger("reset");
-            }, 1000);
+            dataType: 'JSON',
+            data: formData,
+            success: function(data) {
+                console.log(formData);
+            }
+         }).fail(function(ans) {
+            console.log('Я рукожоп');
         });
-        return false;
     });
 });
 
