@@ -82,13 +82,33 @@ let blog = (function() {
         }
     }
 
+    let popupMissClick = function (e) {
+        if ($(window).width() < 768) {
+            if((!$('.blog__menu').is(e.target) && !$('.blog__menu-circle').is(e.target) && $('.blog__menu').has(e.target).length === 0)) {
+                console.log(3);
+                if ($('.blog__menu').hasClass('open-menu')) {
+                    $('.blog__menu').removeClass('open-menu');
+                    $('.blog__menu').animate({
+                        'left': '-80%'
+                    }, 1000);
+                } else {
+                    $('.blog__menu').addClass('open-menu');
+                    $('.blog__menu').animate({
+                        'left': '0'
+                    }, 1000);
+                }
+            }
+        }
+    }
+
     let addListener = function () {
         $(document).on('scroll', scrollPage);
         $(".blog-menu-list__item").on('click', clickOnMenu);
         $(window).on('scroll', pageScroll)
         $(window).on('resize', widthChange);
         $(window).on('resize', styleClean);
-        $('.blog__menu-circle').on('click', popup);     
+        $('.blog__menu-circle').on('click', popup);
+        $(document).on('click', popupMissClick);     
     }
 
     let blogInit = function () {

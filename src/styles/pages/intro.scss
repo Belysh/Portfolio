@@ -39,6 +39,7 @@
     border: 2px solid #ffffff;
     border-radius: 20px;
     transition: 1s all;
+    z-index: 150;
     &:hover {
         border: 2px solid #729e19;
         background-color: #4e8839;
@@ -240,6 +241,12 @@
     font-size: 16px;
     font-weight: 400;
     color: rgba(55, 62, 66, 0.5);
+    @include tablets {
+        width: 290px;
+    }
+    @include phones {
+        width: 240px;
+    }
 }
 
 .auth-form__checkbox-wrap {
